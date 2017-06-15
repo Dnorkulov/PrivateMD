@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/test_ll"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select User" />
+    >
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User1"
-        />
+        android:layout_marginTop="35dp"
+        android:background="@layout/roundedbutton"
+        android:text="Guest"
+        android:textColor="#FFFFFF" />
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@layout/roundedbutton"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
 </LinearLayout>
