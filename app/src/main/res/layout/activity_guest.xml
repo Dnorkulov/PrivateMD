@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+    <EditText
+        android:id="@+id/guestName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName|textCapWords"
+        android:imeOptions="actionNext"
+        android:hint="Guest Name"/>
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:hint="Age"/>
+    <RadioGroup
+    android:id="@+id/radioSex"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RadioButton
+        android:id="@+id/radioMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="male"
+        android:checked="true" />
+
+    <RadioButton
+        android:id="@+id/radioFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="female" />
+
+</RadioGroup>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@layout/roundedbutton"
+        android:text="Confirm"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+</LinearLayout>

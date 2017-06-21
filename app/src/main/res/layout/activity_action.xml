@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Symptoms" />
+
+    <EditText
+        android:id="@+id/sym1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="text"></EditText>
+
+    <EditText
+        android:id="@+id/sym2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="text"></EditText>
+
+    <EditText
+        android:id="@+id/sym3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="text"></EditText>
+
+
+    <Button
+        android:id="@+id/diagnose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@layout/roundedbutton"
+        android:text="Diagnose"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:layout_marginTop="35dp"/>
+
+    <Button
+        android:id="@+id/findLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@layout/roundedbutton"
+        android:text="Find Local Doctors"
+        android:textColor="#FFFFFF"
+        android:textSize="8sp"
+        android:layout_marginTop="35dp"/>
+
+    <Button
+        android:id="@+id/findSpecial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@layout/roundedbutton"
+        android:text="Specialty Doctors"
+        android:textColor="#FFFFFF"
+        android:textSize="8sp"
+        android:layout_marginTop="35dp"/>
+
+</LinearLayout>

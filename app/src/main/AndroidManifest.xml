@@ -19,7 +19,9 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".CreateUser"></activity>
+        <activity android:name=".CreateUser" />
+        <activity android:name=".Guest" />
+        <activity android:name=".Action"></activity>
     </application>
 
 </manifest>
