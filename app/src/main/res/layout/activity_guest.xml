@@ -5,42 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     >
-    <EditText
-        android:id="@+id/guestName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName|textCapWords"
-        android:imeOptions="actionNext"
-        android:hint="Guest Name"/>
-
     <EditText
         android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:hint="Age"
         android:imeOptions="actionDone"
-        android:hint="Age"/>
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Please select your sex" />
+
     <RadioGroup
-    android:id="@+id/radioSex"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
-
-    <RadioButton
-        android:id="@+id/radioMale"
+        android:id="@+id/radioSex"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="male"
-        android:checked="true" />
+        android:layout_height="wrap_content">
 
-    <RadioButton
-        android:id="@+id/radioFemale"
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="male" />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="female" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Are you a smoker?" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioSmoker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="female" />
+        android:layout_height="wrap_content">
 
-</RadioGroup>
+        <RadioButton
+            android:id="@+id/radioNonSmoke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Non-Smoker" />
+
+        <RadioButton
+            android:id="@+id/radioSmoke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smoker" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/confirm"

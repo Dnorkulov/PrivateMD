@@ -2,7 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
 
     <solid android:color="#6495ed" />
 
@@ -11,5 +12,4 @@
         android:bottomRightRadius="1000dp"
         android:topLeftRadius="1000dp"
         android:topRightRadius="1000dp" />
-
 </shape>

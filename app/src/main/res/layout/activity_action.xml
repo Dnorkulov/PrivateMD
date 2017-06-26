@@ -11,24 +11,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Symptoms" />
+        android:text="Feeling ill? Please enter your symptoms." />
 
     <EditText
         android:id="@+id/sym1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="111sp"
+        android:layout_height="wrap_content"
         android:inputType="text"></EditText>
 
     <EditText
         android:id="@+id/sym2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="111sp"
+        android:layout_height="wrap_content"
         android:inputType="text"></EditText>
 
     <EditText
         android:id="@+id/sym3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="111sp"
+        android:layout_height="wrap_content"
         android:inputType="text"></EditText>
 
 

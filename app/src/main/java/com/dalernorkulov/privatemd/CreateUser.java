@@ -1,28 +1,73 @@
 package com.dalernorkulov.privatemd;
 
-
+import android.content.Context;
 import android.content.Intent;
-
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-
-
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
 public class CreateUser extends AppCompatActivity {
+    private SharedPreferences savednotes;
+    private Button confirm;
+    private EditText username;
+    ArrayList<String> users = new ArrayList<String>();
+    String fileName = "Users.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
-        Button create = (Button) findViewById(R.id.confirm);
-        create.setOnClickListener(new View.OnClickListener() {
+        confirm = (Button) findViewById(R.id.confirm);
+        username = (EditText) findViewById(R.id.username);
+        savednotes = getSharedPreferences("notes", 0);
+        username.setText(savednotes.getString("tag", "Default Value"));
+        confirm.setOnClickListener(saveButtonListener);
+        File inFile = new File(fileName);
+        User testUser = new User();
+        testUser.setUserName(username.getText().toString());
+    }
+
+    private void makeTag(String tag) {
+        //String or = savednotes.getString(tag, null);
+        SharedPreferences.Editor preferencesEditor = savednotes.edit();
+        preferencesEditor.putString("tag", tag);
+        preferencesEditor.commit();
+    }
+
+    public View.OnClickListener saveButtonListener = new View.OnClickListener() {
+
+        @Override
         public void onClick(View v) {
-            Intent createIntent = new Intent(CreateUser.this, MainActivity.class);
-            startActivity(createIntent);
+            if (username.getText().length() > 0) {
+                makeTag(username.getText().toString());
+                ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(username
+                        .getWindowToken(), 0);
+            }
+            Intent saveInfo = new Intent(CreateUser.this, MainActivity.class);
+            saveInfo.putExtra("location", username.getText().toString());
+            startActivity(saveInfo);
+            saveFile(fileName, username.getText().toString());
         }
-    });
+    };
+
+    public void saveFile(String file, String text) {
+        try {
+            PrintWriter printWriter = new PrintWriter(file);
+            printWriter.write(text);
+            printWriter.close();
+            Toast.makeText(CreateUser.this, "User Saved", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(CreateUser.this, "Error saving information", Toast.LENGTH_SHORT).show();
+        }
     }
 }

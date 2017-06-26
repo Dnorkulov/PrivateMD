@@ -7,10 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
-
-
-
 public class Guest extends AppCompatActivity {
 
     @Override
@@ -21,7 +17,7 @@ public class Guest extends AppCompatActivity {
         Button confirm = (Button) findViewById(R.id.confirm);
         confirm.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent createIntent = new Intent(Guest.this, MainActivity.class);
+                Intent createIntent = new Intent(Guest.this, Action.class);
                 startActivity(createIntent);
             }
         });

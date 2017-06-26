@@ -1,13 +1,15 @@
 package com.dalernorkulov.privatemd;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-
-
-public class MainActivity extends AppCompatActivity {
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+public class MainActivity extends CreateUser {
+    ArrayList<User> users = new ArrayList<User>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         Button guest = (Button) findViewById(R.id.guest);
         guest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Code here executes on main thread after user presses button
                 Intent createIntent = new Intent(MainActivity.this, Guest.class);
                 startActivity(createIntent);
             }
@@ -24,22 +25,32 @@ public class MainActivity extends AppCompatActivity {
         Button create = (Button) findViewById(R.id.create);
         create.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Code here executes on main thread after user presses button
                 Intent createIntent = new Intent(MainActivity.this, CreateUser.class);
                 startActivity(createIntent);
-            }
-        });
-        Button user1 = (Button) findViewById(R.id.user1);
-        user1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                Intent createIntent = new Intent(MainActivity.this, Action.class);
-                startActivity(createIntent);
+
             }
         });
 
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("location");
 
+        users.add(new User());
+        users.get(0).setUserName(str);
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.users);
+        Button[] butt = new Button[users.size()];
+        for (int i = 0; i < users.size(); i++) {
+            butt[i] = new Button(this);
+            butt[i].setText(users.get(i).getUserName());
+            butt[i].setTextColor(Color.WHITE);
+            butt[i].setGravity(Gravity.CENTER);
+            butt[i].setBackgroundResource(R.drawable.roundedbutton);
+            linearLayout.addView(butt[i]);
+            butt[i].setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent mamba = new Intent(MainActivity.this, Action.class);
+                    startActivity(mamba);
+                }
+            });
+        }
     }
-
 }
-
