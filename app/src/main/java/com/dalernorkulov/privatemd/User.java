@@ -25,6 +25,9 @@ public class User {
     public User() {
 
     }
+    public User(String userNam){
+        userName = userNam;
+    }
 
     //standard setters
     public void setUserName(String x) {

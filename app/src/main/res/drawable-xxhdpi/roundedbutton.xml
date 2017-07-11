@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:shape="rectangle">
     <solid android:color="#6495ed" />
-    <size android:width="150dp" />
+    <size android:width="150dp"
+        />
     <corners
         android:bottomLeftRadius="1000dp"
         android:bottomRightRadius="1000dp"
         android:topLeftRadius="1000dp"
-        android:topRightRadius="1000dp"
-        />
+        android:topRightRadius="1000dp" />
 </shape>
